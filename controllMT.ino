@@ -88,7 +88,7 @@ void setup() {
   pinMode(DIRL,OUTPUT);
 
   while(!nh.connected()){
-    nh.spinOnce();
+  nh.spinOnce();
   }
 
 }
@@ -96,7 +96,6 @@ void setup() {
 
 
 void loop() {
-  while(nh.connected()){
     current_time=millis(); 
     
     // Start 10Hz loop
@@ -126,13 +125,6 @@ void loop() {
       //Spin node to process callbacks
       nh.spinOnce();
     }
-    
-  }
-  
-  // If ros is not connected, don't move
-  vel_Flag = false;
-  Vd = 0.0;
-  Wd = 0.0;
 }
 
 /*
